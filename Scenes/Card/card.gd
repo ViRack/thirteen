@@ -51,9 +51,12 @@ func get_card() -> Card:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 func animate_card() -> void:
 	if (is_pressed == false):
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 func is_card_selected() -> bool:
@@ -63,6 +66,9 @@ func is_card_selected() -> bool:
 func animate_card() -> void:
 	if (is_selected == false):
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -74,6 +80,7 @@ func animate_card() -> void:
 		var tween: Tween = get_tree().create_tween()
 		tween.tween_property(self, "position:y", 0, .1)
 		
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 		is_pressed = false
@@ -88,6 +95,8 @@ func _on_pressed():
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 		is_selected = false	
 
 
@@ -98,6 +107,9 @@ func select_card() -> void:
 func _on_pressed():
 	select_card()
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
