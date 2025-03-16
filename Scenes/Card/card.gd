@@ -16,6 +16,10 @@ func _ready():
 	pass # Replace with function body.
 
 
+func _to_string() -> String:
+	return "suite: " + suit + " rank: " + str(rank)
+
+
 #card-clubs-1.png
 func initialize(card_image: CardImage) -> void:
 	set_card_information(card_image)
@@ -45,7 +49,7 @@ func get_card() -> Card:
 	return self
 
 
-func _on_pressed():
+func animate_card() -> void:
 	if (is_pressed == false):
 		var tween: Tween = get_tree().create_tween()
 		tween.tween_property(self, "position:y", -30, .1)
@@ -56,3 +60,11 @@ func _on_pressed():
 		tween.tween_property(self, "position:y", 0, .1)
 		
 		is_pressed = false
+	
+	SignalManager.on_card_selected.emit(self)
+
+
+
+
+func _on_pressed():
+	animate_card()

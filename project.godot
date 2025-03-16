@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ImageManager="*res://Singletons/image_manager.gd"
+SignalManager="*res://Singletons/signal_manager.gd"
 
 [rendering]
 
