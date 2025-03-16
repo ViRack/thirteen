@@ -8,7 +8,7 @@ var suit: String
 var rank: int
 var value: int
 var this_card_image: CardImage
-var is_pressed: bool
+var is_selected: bool
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,16 +49,26 @@ func get_card() -> Card:
 	return self
 
 
+<<<<<<< Updated upstream
 func animate_card() -> void:
 	if (is_pressed == false):
+=======
+func is_card_selected() -> bool:
+	return is_selected 
+
+
+func animate_card() -> void:
+	if (is_selected == false):
+>>>>>>> Stashed changes
 		var tween: Tween = get_tree().create_tween()
 		tween.tween_property(self, "position:y", -30, .1)
 		
-		is_pressed = true
+		is_selected = true
 	else:
 		var tween: Tween = get_tree().create_tween()
 		tween.tween_property(self, "position:y", 0, .1)
 		
+<<<<<<< Updated upstream
 		is_pressed = false
 	
 	SignalManager.on_card_selected.emit(self)
@@ -68,3 +78,14 @@ func animate_card() -> void:
 
 func _on_pressed():
 	animate_card()
+=======
+		is_selected = false	
+
+
+func select_card() -> void:
+	animate_card()
+
+
+func _on_pressed():
+	select_card()
+>>>>>>> Stashed changes
