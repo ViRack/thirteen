@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 ImageManager="*res://Singletons/image_manager.gd"
 SignalManager="*res://Singletons/signal_manager.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
 [rendering]
 
 renderer/rendering_method="mobile"

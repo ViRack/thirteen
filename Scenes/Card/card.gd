@@ -17,7 +17,7 @@ func _ready():
 
 
 func _to_string() -> String:
-	return "suite: " + suit + " rank: " + str(rank)
+	return "[suite: " + suit + " rank: " + str(rank) + "]"
 
 
 #card-clubs-1.png
@@ -45,71 +45,40 @@ func set_card_value() -> void:
 	pass
 
 
+func set_texture(texture: Texture2D) -> void:
+	set_texture(texture)
+
+
 func get_card() -> Card:
 	return self
 
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-func animate_card() -> void:
-	if (is_pressed == false):
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 func is_card_selected() -> bool:
 	return is_selected 
 
 
 func animate_card() -> void:
+	var current_position = position.y
 	if (is_selected == false):
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+	
 		var tween: Tween = get_tree().create_tween()
-		tween.tween_property(self, "position:y", -30, .1)
+		tween.tween_property(self, "position:y", current_position -30, .1)
 		
 		is_selected = true
 	else:
 		var tween: Tween = get_tree().create_tween()
-		tween.tween_property(self, "position:y", 0, .1)
+		tween.tween_property(self, "position:y", current_position + 30, .1)
 		
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-		is_pressed = false
+	
+		is_selected = false
 	
 	SignalManager.on_card_selected.emit(self)
 
 
-
-
-func _on_pressed():
-	animate_card()
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-		is_selected = false	
-
-
 func select_card() -> void:
 	animate_card()
+	print(self)
 
 
 func _on_pressed():
-	select_card()
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+	animate_card()
