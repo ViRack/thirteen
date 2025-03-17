@@ -9,6 +9,7 @@ var rank: int
 var value: int
 var this_card_image: CardImage
 var is_selected: bool
+var is_selectable: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -45,8 +46,16 @@ func set_card_value() -> void:
 	pass
 
 
+func set_selectable(selectable: bool) -> void:
+	is_selectable = selectable
+
+
 func set_texture(texture: Texture2D) -> void:
 	set_texture(texture)
+
+
+func is_card_selectable() -> bool:
+	return is_selectable
 
 
 func get_card() -> Card:
@@ -77,8 +86,9 @@ func animate_card() -> void:
 
 func select_card() -> void:
 	animate_card()
-	print(self)
+	#print(self)
 
 
 func _on_pressed():
-	animate_card()
+	if is_selectable:
+		select_card()

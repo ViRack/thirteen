@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmqs23omp5wab"]
+[gd_scene load_steps=6 format=3 uid="uid://dmqs23omp5wab"]
 
 [ext_resource type="PackedScene" uid="uid://cgvvgxj13gdm7" path="res://Scenes/Hand/hand.tscn" id="1_nx8rl"]
 [ext_resource type="Script" path="res://Scenes/game/game.gd" id="1_pb2n3"]
 [ext_resource type="Texture2D" uid="uid://5psr8ptxfj1g" path="res://Assets/UI/table.png" id="2_djil2"]
+[ext_resource type="PackedScene" uid="uid://5wf5kx1ni5w3" path="res://Scenes/DrawPile/draw_pile.tscn" id="4_3pewc"]
+[ext_resource type="PackedScene" uid="uid://y20i1jrab0bt" path="res://Scenes/PlayCardsButton/play_cards_button.tscn" id="5_6ukj0"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -26,7 +28,46 @@ texture = ExtResource("2_djil2")
 
 [node name="Hand" parent="." instance=ExtResource("1_nx8rl")]
 layout_mode = 1
-offset_left = -242.0
-offset_top = -70.0
-offset_right = -202.0
-offset_bottom = -30.0
+offset_left = -241.0
+offset_top = -49.0
+offset_right = -201.0
+offset_bottom = -9.0
+
+[node name="Hand2" parent="." instance=ExtResource("1_nx8rl")]
+layout_mode = 1
+offset_left = -583.0
+offset_top = -586.0
+offset_right = -543.0
+offset_bottom = -546.0
+rotation = 1.5708
+is_ai = true
+
+[node name="Hand3" parent="." instance=ExtResource("1_nx8rl")]
+layout_mode = 1
+offset_left = 209.0
+offset_top = -670.0
+offset_right = 249.0
+offset_bottom = -630.0
+rotation = 3.14159
+is_ai = true
+
+[node name="Hand4" parent="." instance=ExtResource("1_nx8rl")]
+layout_mode = 1
+offset_left = 584.0
+offset_top = -132.0
+offset_right = 624.0
+offset_bottom = -92.0
+rotation = 4.71239
+is_ai = true
+
+[node name="DrawPile" parent="." instance=ExtResource("4_3pewc")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PlayCardsButton" parent="." instance=ExtResource("5_6ukj0")]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 342.0
+offset_right = 848.0
+offset_bottom = 486.0

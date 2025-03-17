@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://y20i1jrab0bt"]
+
+[ext_resource type="Texture2D" uid="uid://butpkvwaxgpvt" path="res://Assets/UI/card-blank.png" id="1_abxfy"]
+[ext_resource type="Script" path="res://Scenes/PlayCardsButton/play_cards_button.gd" id="2_5l477"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3meqx"]
+font_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+
+[node name="PlayCardsButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_abxfy")
+script = ExtResource("2_5l477")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PLAY CARDS"
+label_settings = SubResource("LabelSettings_3meqx")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
